@@ -129,7 +129,11 @@ var lastFMStats = {
 			minutes = parseInt(parseInt(totalTime % 3600) / 60);
 			seconds = totalTime - ((hours * 3600) + (minutes * 60));
 		
-
+			// Add a 0 in front of single digit values
+			hours = (hours.toString().length === 1)? "0" + hours : hours.toString();
+			minutes = (minutes.toString().length === 1)? "0" + minutes : minutes.toString();
+			seconds = (seconds.toString().length === 1)? "0" + seconds : seconds.toString();
+			
 			// Create child <td> element to output percentage
 			$(this).append("<td class = 'timePercent' style = 'border-left: 1px solid #ccc'>" + hours + ":" + minutes + ":" + seconds + "</td>");
 		});
