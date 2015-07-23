@@ -1,0 +1,11 @@
+<html>
+<body>
+<script>
+chrome.tabs.onUpdated.addListener(function() {
+  function() {
+    chrome.tabs.executeScript(null, { file: "LastfmExtended.js" });
+  };   
+});
+</script>
+</body>
+</html>
